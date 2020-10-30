@@ -80,10 +80,12 @@ struct ListView: View {
             .sheet(item: $activeSheet) { activeSheet in
                 switch activeSheet {
                 case .add:
-                    AddEditListView(list: nil)
+//                    AddEditListView(list: nil)
+                    AddListView()
                 case .edit:
                     if let list = listCellViewModel?.list {
-                        AddEditListView(list: list)
+//                        AddEditListView(list: list)
+                        EditListView(list: list)
                     }
                 case .settings:
                     SettingsView().environmentObject(settings)
